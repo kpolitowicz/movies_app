@@ -1,4 +1,3 @@
-require "net/http"
 
 class SearchController < ApplicationController
   # GET /search
