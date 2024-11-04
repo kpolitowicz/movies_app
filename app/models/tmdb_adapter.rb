@@ -1,6 +1,7 @@
 require "net/http"
 
 class TmdbAdapter
+  class Error < StandardError ; end
   attr_reader :http_provider
 
   def initialize(http_provider = Net::HTTP)
