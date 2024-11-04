@@ -10,8 +10,8 @@ class SearchController < ApplicationController
     # - maybe sanitize params[:query]
     # - move TMDB_API_KEY to app secrets
     # - allow user to reqeust next pages of search results
-    external_url = "https://api.themoviedb.org/3/search/movie?query=#{params[:query]}&api_key=#{ENV["TMDB_API_KEY"]}"
-    response = Net::HTTP.get(URI(external_url))
-    render json: response
+
+
+    render json: TmdbAdapter.new.search(params[:query])
   end
 end
