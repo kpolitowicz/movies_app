@@ -1,24 +1,43 @@
-# README
+# Using curl with the app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* GET index
 
-Things you may want to cover:
+```
+curl --header "Content-Type: application/json" \
+  --request GET \
+  http://localhost:3000/users
+```
 
-* Ruby version
+* GET show
 
-* System dependencies
+```
+curl --header "Content-Type: application/json" \
+  --request GET \
+  http://localhost:3000/users/1
+```
 
-* Configuration
+* POST create
 
-* Database creation
+```
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"first_name":"Bob","last_name":"Evans","email":"b.evans@example.com"}' \
+  http://localhost:3000/users
+```
 
-* Database initialization
+* PUT update
 
-* How to run the test suite
+```
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{"email":"b.evans@gmail.org"}' \
+  http://localhost:3000/users/1
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* DELETE destroy
 
-* Deployment instructions
-
-* ...
+```
+curl --header "Content-Type: application/json" \
+  --request DELETE \
+  http://localhost:3000/users/2
+```
